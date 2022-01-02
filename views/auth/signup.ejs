@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/nav.css" >
+    <link rel="stylesheet" href="/login.css" >
+    <title>login</title>
+</head>
+<body>
+    <div class="nav">
+        <h1 class="title">Visitor Alert System</h1>
+        <!-- <a href="/logout">Logout</a> -->
+    </div>
+
+    <div class="login">
+        <div class="form" >
+            <% if(error != "") {%>
+             <h3 style="color:red; font-size: medium;padding: 4px 4px;margin:1px 2px;text-align: center; "><%= error %></h3>
+            <% } %>
+            <h1>Signup</h1>
+            <form class="form-body" action="/signup" method="POST" >
+                <label for="name">Name</label>
+                <input type="name" name="name" id="name" >
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email1" required>
+                <label for="institute">Select Institute</label>
+                <select id="institue" name="institute">
+                    <option value="NIT Jalandhar">NIT Jalandhar</option>
+                  </select>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword" required>
+                <button type="submit">SignUp</button>
+            </form>
+            <br>
+            <h3>Already a User <a href="/">Login</a></h3>
+
+        </div>
+    </div>
+</body>
+</html>

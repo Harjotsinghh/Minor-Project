@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/nav.css" >
+    <link rel="stylesheet" href="/info.css">
+    <title>INFO</title>
+</head>
+<body>
+    <div class="nav">
+        <h1 class="title">Visitor Alert System</h1>
+        <a href="/logout">Logout</a>
+    </div>
+
+   <div class="main">
+       <section class="info">
+           <h1>NIT Jalandhar</h1>
+           <table>
+                <tr class="top">
+                    <th >NAME</th>
+                    <th >STATUS</th>
+                    <th >IN-TIME</th>
+                    <th >OUT-TIME</th>
+                </tr>
+               
+                <%  data.forEach( data=> {  %> 
+                </tr>
+                <tr class="rest">
+                 <td><%=data.name%></td>
+                 <% if(data.isAvailable){ %>
+                 <td>Available</td>
+                 <td><%= data.intime %></td>
+                 <td> - </td>
+                 <% }  else { %>
+                    <td>Not Available</td>
+                    <td> - </td>
+                    <td><%= data.outtime %></td>
+                    <%}%>
+             </tr>
+                    
+                <%})%>
+
+
+           </table>
+       </section>
+   </div>
+   <script src="/reload.js"></script>
+    
+</body>
+</html>
